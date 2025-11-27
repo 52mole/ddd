@@ -402,9 +402,9 @@ def run_ddd(client, duration_minutes):
                     send_count += 1
             except Exception:
                 pass
-            time.sleep(0.02)
+            time.sleep(0.01)
         
-        time.sleep(0.5)
+        time.sleep(0.04)
         
         elapsed = int(time.time() - start_time)
         remaining = int(end_time - time.time())
