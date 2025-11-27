@@ -1,0 +1,23 @@
+name: ddd
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ddd:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: ddd
+        env:
+          DDD_CONFIG: ${{ secrets.DDD_CONFIG }}
+        run: python ddd_auto.py
